@@ -49,7 +49,7 @@ function renderProjects(category = 'All') {
     let screenIndex = 0;
     const showGallery = () => { selectedProject = project; mediaIndex = screenIndex; renderGallery(); openDialog(gallery); };
     const button = document.createElement(isApp ? 'article' : 'button'); button.className = 'project'; button.dataset.category = project.category;
-    if (project.id) button.dataset.projectId = project.id;
+    if (project.id) { button.dataset.projectId = project.id; button.id = project.id; }
     button.setAttribute('aria-label', `View ${project.title}`);
     const frame = document.createElement('div'); frame.className = 'project-image';
     if (project.category === 'Graphics') {
@@ -106,14 +106,11 @@ function renderProjects(category = 'All') {
     const note = document.createElement('p'); note.className = 'project-context';
     note.textContent = project.summary || project.description;
     text.append(note);
-    if (project.id === 'diddit') {
-      const story = document.createElement('a'); story.className = 'project-story-link';
-      story.href = project.caseStudy; story.textContent = 'Meet Diddit and Pip ↗'; text.append(story);
-    }
     container.append(button);
     observeScrollReveal(button, projects.indexOf(project) % 2 * 90);
   });
   $('#project-status').textContent = `${projects.length} projects shown. All work remains visible.`;
+  if (location.hash === '#diddit') requestAnimationFrame(() => document.getElementById('diddit')?.scrollIntoView({block:'center',behavior:'instant'}));
 }
 function renderFilters() {
   const filters = $('.filters'); filters.replaceChildren();
@@ -143,6 +140,7 @@ function projectMedia() {
 }
 function renderGallery() {
   gallery.dataset.category = selectedProject.category;
+  gallery.dataset.projectId = selectedProject.id || '';
   $('#gallery-title').textContent = selectedProject.title;
   $('#gallery-category').textContent = selectedProject.context || selectedProject.category;
   $('#gallery-description').textContent = selectedProject.description;
