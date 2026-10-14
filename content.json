@@ -135,6 +135,129 @@
       ]
     },
     {
+      "id": "diddit",
+      "title": "Diddit · Little Win Club",
+      "category": "Interaction",
+      "context": "Personal project · UI/UX and app design",
+      "description": "Some days, the win is finishing a sketch. Other days, it’s opening the sketchbook at all.\n\nDiddit is a personal project I started from a thought I couldn’t quite leave alone. We share our coffee, our outfits and our weekends, but the things that took a little effort often stay unnoticed. I wanted to give them a place too.\n\nI’m designing a habit tracking app where reading a few pages, moving for fifteen minutes or making time for yourself counts as something worth celebrating. You can check in, look back at your progress and cheer on a friend who’s showing up in their own way.\n\nAnd because a progress bar can only say so much, I created Pip. A small companion with a simple job: root for you. Celebrate when you finish, help you start when you feel stuck and remind you that missing a day doesn’t mean you’ve lost your way.\n\nThe warm oranges, soft cards and playful details are my way of bringing that feeling into the screens. I want opening Diddit to feel like a little invitation to try.\n\nI’m also exploring how a completed habit could become an Instagram Story card. Maybe today’s story isn’t somewhere you went. Maybe it’s something you finally did.\n\nThis personal project is still taking shape in Figma, giving me room to explore the visual design, interactions and personality at my own pace. The thought behind it is simple: you don’t have to do something big to feel proud of yourself.",
+      "summary": "A personal project about the little things that deserve a little “I did it.” I’m designing a habit tracking app with daily check ins, encouragement from friends and Pip, a companion rooting for you. Still taking shape in Figma.",
+      "image": "assets/diddit-welcome.png",
+      "images": [
+        "assets/diddit-welcome.png",
+        "assets/diddit-today.png",
+        "assets/diddit-check-in.png",
+        "assets/diddit-friends.png",
+        "assets/diddit-progress.png",
+        "assets/diddit-story.png",
+        "assets/diddit-pip.png"
+      ],
+      "imageDescriptions": [
+        "Diddit welcome screen introducing Pip and the invitation to begin",
+        "Today screen with daily focus, weekly check ins, Pip and reading and movement habit cards",
+        "Diddit habit check in screen",
+        "Friends screen showing little wins, nudge and cheer actions and a shared streak",
+        "Diddit progress screen with check in history, a fourteen day view and Story card action",
+        "Diddit Instagram Story card preview for a little win",
+        "Pip fresh start screen offering encouragement after a missed day"
+      ],
+      "screens": [
+        {
+          "label": "Welcome",
+          "alt": "Diddit welcome screen introducing Pip and the invitation to begin",
+          "explanation": "Meet Pip and enter the Little Win Club. The welcome screen introduces the app’s warm, encouraging personality.",
+          "width": 390,
+          "height": 844,
+          "src": "assets/diddit-welcome.png",
+          "type": "screen",
+          "x": 0,
+          "y": 0,
+          "sourceWidth": 390,
+          "sourceHeight": 844
+        },
+        {
+          "label": "Today",
+          "alt": "Today screen with daily focus, weekly check ins, Pip and reading and movement habit cards",
+          "explanation": "Daily focus, a weekly view and simple habit cards make the next little step easy to find. Pip adds a little encouragement.",
+          "width": 390,
+          "height": 844,
+          "src": "assets/diddit-today.png",
+          "type": "screen",
+          "x": 0,
+          "y": 0,
+          "sourceWidth": 390,
+          "sourceHeight": 844
+        },
+        {
+          "label": "Check in",
+          "alt": "Diddit habit check in screen",
+          "explanation": "The check in flow gives a completed habit its own moment before returning to the day.",
+          "width": 390,
+          "height": 844,
+          "src": "assets/diddit-check-in.png",
+          "type": "screen",
+          "x": 0,
+          "y": 0,
+          "sourceWidth": 390,
+          "sourceHeight": 844
+        },
+        {
+          "label": "Friends",
+          "alt": "Friends screen showing little wins, nudge and cheer actions and a shared streak",
+          "explanation": "A walk or a few pages read becomes something friends can cheer on. Nudges and cheers bring company to the habit routine.",
+          "width": 390,
+          "height": 844,
+          "src": "assets/diddit-friends.png",
+          "type": "screen",
+          "x": 0,
+          "y": 0,
+          "sourceWidth": 390,
+          "sourceHeight": 844
+        },
+        {
+          "label": "Progress",
+          "alt": "Diddit progress screen with check in history, a fourteen day view and Story card action",
+          "explanation": "The progress view brings earlier check ins together, with a calendar and a way to make a Story card from a little win.",
+          "width": 390,
+          "height": 844,
+          "src": "assets/diddit-progress.png",
+          "type": "screen",
+          "x": 0,
+          "y": 0,
+          "sourceWidth": 390,
+          "sourceHeight": 844
+        },
+        {
+          "label": "Story card",
+          "alt": "Diddit Instagram Story card preview for a little win",
+          "explanation": "A completed habit can become a personal Story card. Sharing and saving are explored as prototype flows, so a win can be shared or kept just for you.",
+          "width": 390,
+          "height": 844,
+          "src": "assets/diddit-story.png",
+          "type": "screen",
+          "x": 0,
+          "y": 0,
+          "sourceWidth": 390,
+          "sourceHeight": 844
+        },
+        {
+          "label": "Pip",
+          "alt": "Pip fresh start screen offering encouragement after a missed day",
+          "explanation": "Pip offers encouragement when you miss a day. The companion gives the interface a friendly voice and helps you find a small next step.",
+          "width": 390,
+          "height": 844,
+          "src": "assets/diddit-pip.png",
+          "type": "screen",
+          "x": 0,
+          "y": 0,
+          "sourceWidth": 390,
+          "sourceHeight": 844
+        }
+      ],
+      "caseStudy": "diddit.html",
+      "url": "https://www.figma.com/design/dAlhZs90A3iEElfeXJb9A1/Diddit/?node-id=48-46",
+      "linkLabel": "Explore my Figma work ↗"
+    },
+    {
       "title": "Dear Zindagi — Life Through My Lens",
       "category": "Motion",
       "description": "Our teacher asked us to shoot an introduction for our favourite movie. I chose Dear Zindagi because it felt personally relatable, and I filmed this introduction while learning photography and videography. This is a student-shot study inspired by the film, exploring framing, light, and everyday moments.",
@@ -155,5 +278,5 @@
       "caseStudy": "tomorrow-in-motion.html"
     }
   ],
-  "revision": 17
+  "revision": 18
 }

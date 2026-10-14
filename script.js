@@ -49,6 +49,7 @@ function renderProjects(category = 'All') {
     let screenIndex = 0;
     const showGallery = () => { selectedProject = project; mediaIndex = screenIndex; renderGallery(); openDialog(gallery); };
     const button = document.createElement(isApp ? 'article' : 'button'); button.className = 'project'; button.dataset.category = project.category;
+    if (project.id) button.dataset.projectId = project.id;
     button.setAttribute('aria-label', `View ${project.title}`);
     const frame = document.createElement('div'); frame.className = 'project-image';
     if (project.category === 'Graphics') {
@@ -96,7 +97,7 @@ function renderProjects(category = 'All') {
     const caption = document.createElement('div'); caption.className = 'project-caption';
     const text = document.createElement('div');
     const title = document.createElement('h3'); title.textContent = project.title;
-    const categoryLabel = document.createElement('p'); categoryLabel.textContent = project.category;
+    const categoryLabel = document.createElement('p'); categoryLabel.textContent = project.context || project.category;
     const arrow = document.createElement('span'); arrow.className = 'project-arrow'; arrow.textContent = '↗'; arrow.setAttribute('aria-hidden','true');
     const action = document.createElement(isApp ? 'button' : 'span'); action.className = 'project-action';
     if (isApp) { action.type = 'button'; action.onclick = showGallery; } action.textContent = project.category === 'Graphics' ? 'View all three posters ↗' : project.category === 'Interaction' ? 'View app ↗' : 'Watch the film ↗';
@@ -105,6 +106,10 @@ function renderProjects(category = 'All') {
     const note = document.createElement('p'); note.className = 'project-context';
     note.textContent = project.summary || project.description;
     text.append(note);
+    if (project.id === 'diddit') {
+      const story = document.createElement('a'); story.className = 'project-story-link';
+      story.href = project.caseStudy; story.textContent = 'Meet Diddit and Pip ↗'; text.append(story);
+    }
     container.append(button);
     observeScrollReveal(button, projects.indexOf(project) % 2 * 90);
   });
@@ -118,7 +123,7 @@ function renderFilters() {
       filters.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
       const target = category === 'All' ? $('#work') : [...document.querySelectorAll('.project')].find(p => p.dataset.category === category);
       target?.scrollIntoView({behavior: reducedMotion.matches ? 'instant' : 'smooth', block:'center'});
-      $('#project-status').textContent = `Jumped to ${category}. All four projects remain visible.`;
+      $('#project-status').textContent = `Jumped to ${category}. All ${content.projects.length} projects remain visible.`;
     };
     filters.append(button);
   });
@@ -139,12 +144,12 @@ function projectMedia() {
 function renderGallery() {
   gallery.dataset.category = selectedProject.category;
   $('#gallery-title').textContent = selectedProject.title;
-  $('#gallery-category').textContent = selectedProject.category;
+  $('#gallery-category').textContent = selectedProject.context || selectedProject.category;
   $('#gallery-description').textContent = selectedProject.description;
   const study = $('#gallery-study');
   study.hidden = !selectedProject.caseStudy;
   if (selectedProject.caseStudy) study.href = selectedProject.caseStudy; else study.removeAttribute('href');
-  const link = $('#gallery-live'); link.hidden = !validLink(selectedProject.url);
+  const link = $('#gallery-live'); link.textContent = selectedProject.linkLabel || 'Explore live prototype ↗'; link.hidden = !validLink(selectedProject.url);
   if (!link.hidden) link.href = selectedProject.url; else link.removeAttribute('href');
   const media = projectMedia(), item = media[mediaIndex], container = $('#gallery-media');
   container.querySelectorAll('video').forEach(v => v.pause()); container.replaceChildren();
